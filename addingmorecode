@@ -51,10 +51,10 @@ class ProfileBasketball(db.Model):
     name = db.Column(db.String(Length(min=5, max = 18), unique = True), nullable = False)
     running_speed = db.Column(db.String(min=1, max=2))
     level_status = db.Column(db.String(min=5, max =12))
-    age = db.Column(db.Integer(min=2, max=2), nullable = False)
-    race = db.Column(db.String(min=3, max =12), nullable = False)
-    height = db.Column(db.String(min=2, max=2), nullable = False)
-    weight =db.Column(db.Integer(min=2, max=3))
+    basket_ball_size= db.Column(db.Integer(min=2, max=2), nullable = False)
+    dc = db.Column(db.String(min=3, max =12), nullable = False)
+    a1 = db.Column(db.String(min=2, max=2), nullable = False)
+    we =db.Column(db.Integer(min=2, max=3))
 
 
 
@@ -66,14 +66,14 @@ class User(db.Model):
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
     password = db.Column(db.String(60), nullable=False)
     posts = db.relationship('Post', backref='author', lazy=True)
-    sport = db.Column(db.String(20), backref ="sport")
+    
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
 
 class RunningSpeed(db.Model):
     status = db.Column(db.String(10), nullable = False)
-    running_speed = db.Column(db.Integer(3), nullable = False)
+    rs = db.Column(db.Integer(3), nullable = False)
     strength = db.Column(db.Integer(4), nullable = False)
 
 
